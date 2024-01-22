@@ -229,7 +229,7 @@
                                                 "borderRadius": "ROUNDED",
                                                 "iconName": "globe-network",
                                                 "iconAlign": "left",
-                                                "onClick": "{{scrapeIt.run()}}"
+                                                "onClick": "{{scrapeIt.run(() => {}, () => showAlert('Oops something went wrong 😔'))}}"
                                             },
                                             {
                                                 "isVisible": true,
