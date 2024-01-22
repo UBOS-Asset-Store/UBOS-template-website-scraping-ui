@@ -1,0 +1,83 @@
+[
+    {
+        "_id": "65aa54b89c2edf56436d4f9e",
+        "applicationId": "site-scrape-ui",
+        "organizationId": "Org",
+        "pluginType": "API",
+        "pluginId": "API",
+        "Action": {
+            "name": "scrapeIt",
+            "datasource": {
+                "name": "DEFAULT_REST_DATASOURCE",
+                "datasourceConfiguration": {
+                    "url": "{{main.env.NODEREDURL}}/scrapeIt"
+                },
+                "invalids": [],
+                "isValid": true,
+                "pluginId": "API",
+                "messages": []
+            },
+            "executeOnLoad": false,
+            "pageId": "home",
+            "actionConfiguration": {
+                "timeoutInMillisecond": 10000,
+                "encodeParamsToggle": true,
+                "httpMethod": "POST",
+                "headers": [
+                    {
+                        "key": "content-type",
+                        "value": "application/json"
+                    }
+                ],
+                "queryParameters": [],
+                "body": "{\n\t\"link\": {{JSON.stringify(urlForScrape.text)}},\n\t\"objectiveOfScraping\": {{JSON.stringify(objectiveOfScraping.text)}}\n}",
+                "bodyFormData": [],
+                "formData": {
+                    "apiContentType": "application/json"
+                },
+                "pluginSpecifiedTemplates": [
+                    {
+                        "value": true
+                    }
+                ]
+            },
+            "dynamicBindingPathList": [
+                {
+                    "key": "datasourceUrl"
+                },
+                {
+                    "key": "body"
+                }
+            ],
+            "isValid": true,
+            "invalids": [],
+            "jsonPathKeys": [
+                "main.env.NODEREDURL",
+                "JSON.stringify(urlForScrape.text)",
+                "JSON.stringify(objectiveOfScraping.text)"
+            ],
+            "userSetOnLoad": false,
+            "confirmBeforeExecute": false
+        },
+        "createdAt": "2024-01-19T10:53:44.829Z",
+        "updatedAt": "2024-01-22T08:29:43.402Z",
+        "deleted": false,
+        "policies": [
+            {
+                "permission": "read:actions",
+                "groups": [],
+                "users": []
+            },
+            {
+                "permission": "manage:actions",
+                "groups": [],
+                "users": []
+            },
+            {
+                "permission": "execute:actions",
+                "groups": [],
+                "users": []
+            }
+        ]
+    }
+]
